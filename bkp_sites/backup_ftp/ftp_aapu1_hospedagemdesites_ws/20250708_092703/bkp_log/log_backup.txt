@@ -1,0 +1,39 @@
+Host: ftp.aapu1.hospedagemdesites.ws
+📅 Início: 2025-07-08 09:27:03.622176
+
+🔎 ETAPA 1: Listagem de pastas remotas
+📁 /.gems
+📁 /includes
+📁 /logs
+📁 /public_html
+📁 /tmp
+
+📦 ETAPA 2: Total de itens: 17 (5 pastas, 12 arquivos)
+
+📂 ETAPA 3: Transferência de todos os itens
+📁 Diretório criado: backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files
+📄 /.bash_profile → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/.bash_profile (0.26 KB)
+📄 /.gemrc → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/.gemrc (0.04 KB)
+📁 Diretório criado: backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/.gems
+📁 Diretório criado: backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/includes
+📁 Diretório criado: backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/logs
+📄 /logs/error_log20250701 → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/logs/error_log20250701 (0.00 KB)
+📄 /logs/error_log20250702 → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/logs/error_log20250702 (0.00 KB)
+📄 /logs/error_log20250703 → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/logs/error_log20250703 (0.00 KB)
+📄 /logs/error_log20250704 → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/logs/error_log20250704 (0.00 KB)
+📄 /logs/error_log20250705 → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/logs/error_log20250705 (0.00 KB)
+📄 /logs/error_log20250706 → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/logs/error_log20250706 (0.00 KB)
+📄 /logs/error_log20250707 → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/logs/error_log20250707 (0.00 KB)
+📄 /logs/error_log20250708 → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/logs/error_log20250708 (0.00 KB)
+📄 /php.ini → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/php.ini (4.73 KB)
+📁 Diretório criado: backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/public_html
+📄 /public_html/.htaccess → backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/public_html/.htaccess (0.12 KB)
+📁 Diretório criado: backup_ftp/ftp_aapu1_hospedagemdesites_ws/20250708_092703/bkp_files/tmp
+
+✅ Fim: 2025-07-08 09:27:05.507752
+⏱️ Duração: 0:00:02.507811
+
+🔍 ETAPA 4: Verificação local x remoto
+Pastas remotas: 5, locais: 5
+
+Arquivos remotos: 12, locais: 12
