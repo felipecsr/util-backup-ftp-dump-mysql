@@ -149,6 +149,3 @@ Use `nano` com `sudo` e confirme com `grep`.
 Após seguir todos esses passos e contornar os problemas específicos, a aplicação passou a funcionar corretamente no ambiente local, acessível em:
 
 👉 http://localhost/sistemadegestaom1/public_html/
-
-Usuário: admin
-Senha: admin
