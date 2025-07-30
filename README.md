@@ -35,8 +35,8 @@ Além da recuperação, o sucesso do projeto foi validado pela **restauração e
 * **[Guia de Validação Local com XAMPP](./output_examples/como_rodar_sistema_via_xampp.md):** Documentação detalhada do processo de restauração e teste dos sites e bancos de dados recuperados.
 
 ![exemplo de tela dos sistema executado como localhost](./output_examples/login.png)
-
 *Tela de login executada localhost*
+
 ---
 
 ## 🧩 Principais Funcionalidades do Toolkit
