@@ -1,111 +1,94 @@
-# 🛠️ FTP & MySQL Backup Toolkit
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python) ![Shell Script](https://img.shields.io/badge/Shell-Script-black?logo=gnubash) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white) ![Status](https://img.shields.io/badge/Status-Solução_Validada-green)
 
-Ferramenta automatizada para backup completo de **sites hospedados na Locaweb**, com foco em **eficiência em lote**, segurança e verificação cruzada dos dados baixados.
+# 🛠️ Toolkit de Automação para Recuperação de Ativos Digitais
 
-## 🎯 Objetivo
+<br>
 
-Este projeto tem como finalidade **resgatar rapidamente todo o conteúdo de hospedagens Locaweb** usando credenciais administrativas. Ele cobre dois aspectos principais:
+## 📄 O Case: Resgate de Ativos Digitais em Lote
 
-- **Códigos do site e arquivos**, via FTP.
-- **Bases de dados MySQL**, via dump automático.
+Este projeto foi desenvolvido como uma solução prática para a migração de múltiplos sites de um serviço de hospedagem que seria descontinuado. O desafio era garantir a **recuperação integral e verificada de todos os ativos digitais** (arquivos e bancos de dados) de forma automatizada.
 
-## 📁 Estrutura do Repositório
+### 💥 O Problema de Negócio
 
-```
-ftp-mysql-backup-toolkit/
-├── backup_ftp_em_lote.py       # Script de backup FTP com verificação de integridade
-├── dump.py                     # Script de dump de bancos MySQL com validação
-├── ftp_credenciais.csv         # Lista de acessos para execução em lote
-├── backup_ftp/                 # Backups dos arquivos por host e data
-└── backup_mysql/               # Dumps dos bancos e logs organizados por host
-```
+O processo manual de backup era inviável, lento e propenso a erros. A necessidade era de uma ferramenta que pudesse:
+* Realizar o backup completo de **10+ sites** e seus respectivos bancos de dados em uma única execução.
+* Garantir que **nenhum dado fosse perdido** no processo.
+* Gerar **evidências auditáveis** do sucesso e da integridade de cada operação.
 
-## 🧩 Scripts Inclusos
+---
 
-### 1. `backup_ftp_em_lote.py`
+## 🎯 A Solução: Um Toolkit de Automação com Foco em Verificação
 
-Backup de **todos os arquivos e pastas de sites via FTP**, com recursos de:
+Foi desenvolvido um toolkit em Python para automatizar 100% do processo. A solução foi projetada com foco em **velocidade, rastreabilidade e segurança**, permitindo a migração completa em poucas horas e fornecendo múltiplos artefatos para validação.
 
-- Execução em lote via `ftp_credenciais.csv`.
-- Download recursivo completo das pastas.
-- **Barra de progresso** por item transferido.
-- Log detalhado em `log_backup.txt` com:
-  - estrutura original do FTP,
-  - itens baixados,
-  - erros e alertas,
-  - comparação **remoto x local**.
-- Geração de `summary.csv` com os arquivos baixados e seus tamanhos.
+### ✅ Resultados e Evidências do Projeto
 
-#### 🧪 Exemplo de validação no log:
-```
-Pastas remotas: 12, locais: 12
-Arquivos remotos: 87, locais: 87
-✅ Backup completo sem discrepâncias.
-```
+A aplicação do toolkit resultou no backup bem-sucedido de todos os ativos, com a integridade validada por relatórios e logs gerados automaticamente. Os arquivos abaixo são exemplos reais da saída da ferramenta para um dos domínios e banco de dados atrelado:
 
-### 2. `dump.py`
+* **[Relatório de Integridade](./integrity_report.txt):** Confirmação de que 100% dos arquivos e pastas foram espelhados localmente.
+* **[Sumário de Arquivos (CSV)](./summary.csv):** Lista detalhada dos mais de 5.000 arquivos baixados, com seus respectivos tamanhos, para auditoria.
+* **[Log de Backup FTP](./log_backup_ftp.txt):** Log completo da operação de transferência de arquivos (com loops de resiliência para desconexão).
+* **[Log de Dump MySQL](./log_dump.txt):** Log da extração dos bancos de dados do domínio.
 
-Dump completo de **todos os bancos MySQL** associados às credenciais fornecidas. Funcionalidades:
+Além da recuperação, o sucesso do projeto foi validado pela **restauração e execução dos backups em um ambiente de servidor local**, utilizando XAMPP.
 
-- Execução em lote via `ftp_credenciais_mysql.csv`.
-- Criação automatizada de:
-  - dumps SQL (`dump/`)
-  - logs (`logs/`)
-  - backup bruto (opcional)
-- Geração de `readme.txt` com **guia passo-a-passo para restauração**.
-- Verificação cruzada entre tabelas existentes e tabelas presentes no dump (`DROP TABLE`).
-- Detecção de falhas silenciosas (ex: tabelas não incluídas no dump).
+* **[Guia de Validação Local com XAMPP](./como_rodar_sistema_via_xampp.md):** Documentação detalhada do processo de restauração e teste dos sites e bancos de dados recuperados.
 
-#### 🧪 Exemplo de verificação no log:
-```
-Banco: clientes
-Tabelas:
-  - usuarios
-  - pedidos
-✅ Dump concluído: clientes.sql
-✅ Verificação OK (2 tabelas)
-```
+![exemplo de tela dos sistema executado como localhost](./login.png)
+*Tela de login executada localhost*
+---
+
+## 🧩 Principais Funcionalidades do Toolkit
+
+A solução é composta por scripts modulares e adaptáveis:
+
+* **`backup_ftp_em_lote.py` (Versões para Linux & Windows):**
+    * Executa backups de múltiplos sites em lote a partir de um arquivo `csv`.
+    * Gera logs detalhados e relatórios de verificação de integridade.
+
+* **`dump.py` (Backup de Bancos de Dados):**
+    * Automatiza a execução de `mysqldump` para múltiplos bancos de dados.
+    * Gera um guia de restauração automático para facilitar a migração.
+    * Realiza uma validação cruzada para garantir que todas as tabelas foram exportadas.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+* **Linguagem Principal:** Python 3.8+
+* **Automação de Sistema:** Shell Script, `mysqldump`
+* **Bibliotecas Python:** `pandas`
+* **Ambiente de Validação Local:** XAMPP (Apache, MySQL)
+
+---
 
 ## 🚀 Como Usar
 
-1. **Configure o CSV de credenciais** com os acessos:
-   - `ftp_credenciais.csv` para backups FTP
-   - `ftp_credenciais_mysql.csv` para dumps MySQL
+1.  **Configure os Arquivos de Credenciais:**
+    * Preencha o `ftp_credenciais.csv` com os dados de acesso FTP.
+    * Preencha o `ftp_credenciais_mysql.csv` para os bancos de dados.
 
-2. **Execute os scripts** em lote:
-```bash
-python backup_ftp_em_lote.py
-python dump.py
-```
+2.  **Instale os Requisitos:**
+    * Certifique-se de ter `mysqldump` (via MySQL Client ou XAMPP) instalado e acessível no PATH do sistema.
+    * Instale as bibliotecas Python necessárias:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-3. Os arquivos e logs serão salvos em pastas organizadas por host e data.
+3.  **Execute os Scripts:**
+    ```bash
+    # Para backup de arquivos
+    python linux_backup_ftp_em_lote.py
+    
+    # Para backup de bancos de dados
+    python dump.py
+    ```
+4.  **Verifique os Resultados:** Os backups e logs estarão organizados nas pastas `backup_ftp/` e `backup_mysql/`.
 
-## 📌 Observações
-
-- **Recomenda-se rodar em ambiente Linux** com acesso a `mysqldump` instalado.
-- O foco é **velocidade, rastreabilidade e segurança**, permitindo migrar múltiplos sites de forma confiável.
-- Pode ser adaptado para outros provedores com ajustes mínimos.
+---
 
 ## 🧑‍💻 Autor
 
-Felipe Reis - felipecsr@gmail.com
+**Felipe Reis** | [LinkedIn](https://www.linkedin.com/in/felipecsr) | [GitHub](https://github.com/felipecsr)
 
-Desenvolvido como ferramenta de apoio para resgate e migração de sites Locaweb, com foco em **clientes que desejam encerrar o serviço mantendo uma cópia integral dos dados**.
-
-## 🧰 Requisitos do Sistema
-
-Além da biblioteca Python abaixo, é necessário que o utilitário `mysqldump` esteja instalado no sistema:
-
-```bash
-# No Ubuntu/Debian:
-sudo apt update
-sudo apt install mysql-client
-
-# Verifique se o mysqldump está disponível:
-mysqldump --version
-```
-
-Também é recomendável ter o Python 3.8+ instalado e as bibliotecas do `requirements.txt` configuradas:
-```bash
-pip install -r requirements.txt
-```
+*Este projeto exemplifica a aplicação de habilidades de scripting e automação para resolver um problema de negócio real, com foco em governança, segurança e recuperação de dados.*
