@@ -1,0 +1,9 @@
+RELATÓRIO DE INTEGRIDADE
+========================
+Pastas remotas: 411
+Arquivos remotos: 2976
+
+ESTRUTURA DO BACKUP LOCAL:
+Total de pastas: 411
+Total de arquivos: 2976
+Tamanho total: 162.83 MB
