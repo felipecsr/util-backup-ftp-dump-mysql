@@ -25,16 +25,17 @@ Foi desenvolvido um toolkit em Python para automatizar 100% do processo. A solu�
 
 A aplicação do toolkit resultou no backup bem-sucedido de todos os ativos, com a integridade validada por relatórios e logs gerados automaticamente. Os arquivos abaixo são exemplos reais da saída da ferramenta para um dos domínios e banco de dados atrelado:
 
-* **[Relatório de Integridade](./integrity_report.txt):** Confirmação de que 100% dos arquivos e pastas foram espelhados localmente.
-* **[Sumário de Arquivos (CSV)](./summary.csv):** Lista detalhada dos mais de 5.000 arquivos baixados, com seus respectivos tamanhos, para auditoria.
-* **[Log de Backup FTP](./log_backup_ftp.txt):** Log completo da operação de transferência de arquivos (com loops de resiliência para desconexão).
-* **[Log de Dump MySQL](./log_dump.txt):** Log da extração dos bancos de dados do domínio.
+* **[Relatório de Integridade](./output_examples/integrity_report.txt):** Confirmação de que 100% dos arquivos e pastas foram espelhados localmente.
+* **[Sumário de Arquivos (CSV)](./output_examples/summary.csv):** Lista detalhada dos mais de 5.000 arquivos baixados, com seus respectivos tamanhos, para auditoria.
+* **[Log de Backup FTP](./output_examples/log_backup_ftp.txt):** Log completo da operação de transferência de arquivos (com loops de resiliência para desconexão).
+* **[Log de Dump MySQL](./output_examples/log_dump.txt):** Log da extração dos bancos de dados do domínio.
 
 Além da recuperação, o sucesso do projeto foi validado pela **restauração e execução dos backups em um ambiente de servidor local**, utilizando XAMPP.
 
-* **[Guia de Validação Local com XAMPP](./como_rodar_sistema_via_xampp.md):** Documentação detalhada do processo de restauração e teste dos sites e bancos de dados recuperados.
+* **[Guia de Validação Local com XAMPP](./output_examples/como_rodar_sistema_via_xampp.md):** Documentação detalhada do processo de restauração e teste dos sites e bancos de dados recuperados.
 
-![exemplo de tela dos sistema executado como localhost](./login.png)
+![exemplo de tela dos sistema executado como localhost](./output_examples/login.png)
+
 *Tela de login executada localhost*
 ---
 
