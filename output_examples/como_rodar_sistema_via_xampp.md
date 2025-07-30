@@ -1,5 +1,5 @@
 
-# Configuração de Ambiente Local para o Projeto "Sistema de Gestão - MASM"
+# Configuração de Ambiente Local para execução do Projeto
 
 Este documento detalha o passo a passo para configurar e executar este projeto (um sistema legado em CodeIgniter) em um ambiente de desenvolvimento local utilizando **XAMPP (LAMPP)** em um sistema operacional Linux. O guia inclui a solução para problemas comuns de compatibilidade e configuração que foram encontrados durante o processo.
 
